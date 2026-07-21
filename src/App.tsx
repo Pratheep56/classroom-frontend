@@ -45,8 +45,6 @@ function App() {
                         }
                     ]}
                 >
-
-
                         <Routes>
                             <Route element={
                                 <Layout>
@@ -55,10 +53,10 @@ function App() {
                             }>
                                 <Route path ="/" element={<Dashboard />} />
 
-                                    <Route path ="subjects">
-                                        <Route index element={<SubjectsList />} />
-                                        <Route path={"create"} element={<SubjectsCreate />} />
-                                    </Route>
+                                <Route path ="subjects">
+                                    <Route index element={<SubjectsList />} />
+                                    <Route path={"create"} element={<SubjectsCreate />} />
+                                </Route>
                             </Route>
                         </Routes>
                     <Toaster />
