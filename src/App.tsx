@@ -11,10 +11,12 @@ import { Toaster } from "./components/refine-ui/notification/toaster";
 import { ThemeProvider } from "./components/refine-ui/theme/theme-provider";
 import './App.css'
 import Dashboard from "@/pages/dashboard.tsx";
-import {BookOpen, Home} from "lucide-react";
+import {BookOpen, GraduationCap, Home} from "lucide-react";
 import {Layout} from "./components/refine-ui/layout/layout.tsx";
 import SubjectsList from "@/pages/subjects/list.tsx";
 import SubjectsCreate from "@/pages/subjects/create.tsx";
+import ClassesList from "@/pages/classes/list.tsx";
+import ClassesCreate from "@/pages/classes/create.tsx";
 
 function App() {
     return (
@@ -42,6 +44,12 @@ function App() {
                             list: "/subjects",
                             create: "/subjects/create",
                             meta: { label: "Subjects", icon: <BookOpen />}
+                        },
+                        {
+                            name: "classes",
+                            list: "/classes",
+                            create: "/classes/create",
+                            meta: { label: "Classes", icon: <GraduationCap />}
                         }
                     ]}
                 >
@@ -57,6 +65,11 @@ function App() {
                                     <Route index element={<SubjectsList />} />
                                     <Route path={"create"} element={<SubjectsCreate />} />
                                 </Route>
+
+                                <Route path ="classes">
+                                    <Route index element={<ClassesList />} />
+                                    <Route path={"create"} element={<ClassesCreate />} />
+                                </Route>
                             </Route>
                         </Routes>
                     <Toaster />
@@ -70,6 +83,6 @@ function App() {
         </RefineKbarProvider>
         </BrowserRouter>
       );
-};
+}
 
 export default App;
